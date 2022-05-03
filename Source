@@ -82,3 +82,15 @@ print("\n\n") ## Quebra de linhas apenas para ficar mais vísivel o resultado
 
 for i in range(0, times.__len__()): ## Agora eu mostro quais são os dados do campeonato em sí.
     print("{}, Pontos: {}, Vitórias: {}, Derrotas: {}, Empates: {}, Gols Feitos : {}, Gols Sofridos : {}".format(times[i][0], times[i][6], times[i][1], times[i][2], times[i][3], times[i][4], times[i][5]))
+
+ganhador = [0, 0]
+
+for i in range(0, times.__len__()):
+    if ganhador[0] < times[i][6]:
+        ganhador[0] = times[i][6]
+        ganhador[1] = i
+
+print("\n\n") ## Quebra de linhas apenas para ficar mais vísivel o resultado
+
+print("Hoje apresentamos o " + times[ganhador[1]][0] + " como vencedor do campeonato brasileiro de 2022 " +
+      "com um total de " + str(times[ganhador[1]][6]) + " pontos.")
